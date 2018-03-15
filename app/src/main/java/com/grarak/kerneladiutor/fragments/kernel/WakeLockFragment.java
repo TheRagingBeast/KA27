@@ -158,7 +158,7 @@ public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCar
             views.add(mIPSWakeLockCard);
         }
 
-        if (WakeLock.hasIPSWakeLock()) {
+        if (WakeLock.hasSanityWakeLock()) {
             temp_bool = WakeLock.isSanityWakeLockActive();
             mSanityWakeLockCard = new SwitchCardView.DSwitchCard();
             mSanityWakeLockCard.setTitle(getString(R.string.sanity_wakelock));

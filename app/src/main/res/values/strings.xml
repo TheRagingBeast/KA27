@@ -602,7 +602,7 @@
     <string name="driver_tunables">SOC Driver Tunables</string>
     <string name="third_party_driver_tunables">Tunables from Third-Party Drivers</string>
     <string name="sound_control">Sound Control</string>
-    <string name="headset_pdesireaudio">PDesireAudio Ultra High Quality Mode</string>
+    <string name="pdesire_audio">PDesireAudio Ultra High Quality Mode</string>
     <string name="headset_highperf_mode">Headset High Performance Mode</string>
     <string name="headset_highperf_mode_summary">This helps prevent distortion at higher volumes.</string>
     <string name="headphone_gain_independent">Independent Headphone Gain</string>

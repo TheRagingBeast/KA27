@@ -27,5 +27,5 @@ script:
   - ls
   - ls /home/travis/build/varunhardgamer/KA27/app/build/outputs/
   - ls /home/travis/build/varunhardgamer/KA27/app/build/outputs/apk
-  - ls app/build/outputs/apk/release
-  - cd /home/travis/build/varunhardgamer/KA27/app/build/outputs/apk/release &&  curl --upload-file ./app-release.apk https://transfer.sh/app-release.apk && sleep 5
+  - ls app/build/outputs/apk/debug
+  - cd /home/travis/build/varunhardgamer/KA27/app/build/outputs/apk/debug &&  curl --upload-file ./app-debug.apk https://transfer.sh/app-debug.apk && sleep 5

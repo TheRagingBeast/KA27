@@ -30,7 +30,6 @@ import com.grarak.kerneladiutor.utils.kernel.Sound;
 public class SoundFragment extends RecyclerViewFragment implements SwitchCardView.DSwitchCard.OnDSwitchCardListener, SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener {
 
     private SwitchCardView.DSwitchCard mSoundControlEnableCard;
-    private SwitchCardView.DSwitchCard mPDesireAudioCard;
     private SwitchCardView.DSwitchCard mHighPerfModeEnableCard;
     private SwitchCardView.DSwitchCard mwcdspkr_drv_wrndCard, mwcdHighPerfModeEnableCard;
     private SeekBarCardView.DSeekBarCard mHeadphoneGainCard, mHeadphoneGainLCard, mHeadphoneGainRCard;
@@ -54,13 +53,12 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         if (Sound.hasThirdPartyTunables()) thirdpartytunablesInit();
 
         if (Sound.hasSoundControlEnable()) soundControlEnableInit();
-        if (Sound.hasPDesireAudio()) PDesireAudioInit();
         if (Sound.hasHighPerfModeEnable()) highPerfModeEnableInit();
         if (Sound.hasHeadphoneGain()) headphoneGainInit();
         if (Sound.hasHandsetMicrophoneGain()) handsetMicrophoneGainInit();
         if (Sound.hasCamMicrophoneGain()) camMicrophoneGainInit();
         if (Sound.hasSpeakerGain()) speakerGainInit();
-        if (Sound.hasHeadphonePowerAmpGain()) headphonePowerAmpGainInit();
+        // if (Sound.hasHeadphonePowerAmpGain()) headphonePowerAmpGainInit();
         if (Sound.hasMicrophoneGain()) microphoneGainInit();
         if (Sound.hasVolumeGain()) volumeGainInit();
     }
@@ -105,15 +103,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         mSoundControlEnableCard.setOnDSwitchCardListener(this);
 
         addView(mSoundControlEnableCard);
-    }
-    
-    private void PDesireAudioInit() {
-        mPDesireAudioCard = new SwitchCardView.DSwitchCard();
-        mPDesireAudioCard.setTitle(getString(R.string.headset_pdesireaudio));
-        mPDesireAudioCard.setChecked(Sound.isPDesireAudioEnabled());
-        mPDesireAudioCard.setOnDSwitchCardListener(this);
-            
-        addView(mPDesireAudioCard);
     }
 
     private void highPerfModeEnableInit() {
@@ -220,8 +209,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
 
     @Override
     public void onChecked(SwitchCardView.DSwitchCard dSwitchCard, boolean checked) {
-        if (dSwitchCard == mPDesireAudioCard)
-            Sound.enablePDesireAudio(checked, getActivity());
         if (dSwitchCard == mSoundControlEnableCard)
             Sound.activateSoundControl(checked, getActivity());
         else if (dSwitchCard == mHeadphoneGainIndependentCard) {

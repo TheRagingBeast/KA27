@@ -80,7 +80,6 @@ public interface Constants {
     String CPU_BOOST_INPUT_BOOST_FREQ = CPU_BOOST + "/input_boost_freq";
     String CPU_BOOST_WAKEUP = CPU_BOOST + "/wakeup_boost";
     String CPU_BOOST_HOTPLUG = CPU_BOOST + "/hotplug_boost";
-    String PDESIREAUDIO_ENABLE = "/sys/module/snd_soc_wcd9330/parameters/uhqa_mode_pdesireaudio";
 
     // State Notifier
     String STATE_NOTIFIER = "/sys/module/state_notifier/parameters";
@@ -955,6 +954,7 @@ public interface Constants {
 
     // Sound
     String SOUND_CONTROL_ENABLE = "/sys/module/snd_soc_wcd9320/parameters/enable_fs";
+    String PDESIREAUDIO_ENABLE = "/sys/module/snd_soc_wcd9330/parameters/uhqa_mode_pdesireaudio";
     String WCD_HIGHPERF_MODE_ENABLE = "/sys/module/snd_soc_wcd9320/parameters/high_perf_mode";
     String WCD_SPKR_DRV_WRND = "/sys/module/snd_soc_wcd9320/parameters/spkr_drv_wrnd";
 
@@ -1233,6 +1233,8 @@ public interface Constants {
 
     String BLUEDROID_TIMER_WAKELOCK = "/sys/module/wakeup/parameters/enable_bluedroid_timer_ws";
     String ALARMTIMER_WAKELOCK = "/sys/module/wakeup/parameters/enable_alarmtimer_ws";
+    String IPS_WAKELOCK = "/sys/module/wakeup/parameters/enable_ipa_ws";
+    String SANITY_WAKELOCK = "/sys/module/wakeup/parameters/enable_qpnp_fg_sanity_check_ws";
 
     String SENSOR_IND_WAKELOCK = "/sys/module/wakeup/parameters/enable_si_ws";
     String MSM_HSIC_HOST_WAKELOCK = "/sys/module/wakeup/parameters/enable_msm_hsic_ws";

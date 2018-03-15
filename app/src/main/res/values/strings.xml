@@ -830,6 +830,9 @@
     <string name="wlan_ctrl_wakelock_summary">Allow wlan_ctrl wakelock.\n Currently: %s</string>
     <string name="wlan_wakelock">wlan Wakelock</string>
     <string name="alarm_wakelock">AlarmTimer Wakelock</string>
+    <string name="alarm_wakelock_summary">Allow AlarmTimer Wakelock.\n Currently: %s</string>
+    <string name="ips_wakelock">Allow IPA_WS Wakelock</string>
+    <string name="sanity_wakelock">Allow QPNP_FG_SANITY_CHECK Wakelock</string>
     <string name="wlan_wakelock_summary">Allow wlan wakelock.\n Currently: %s</string>
     <string name="wlan_rx_wakelock_divider">wlan_rx Wakelock Divider</string>
     <string name="msm_hsic_wakelock_divider">msm_hsic Wakelock Divider</string>
@@ -837,7 +840,7 @@
     <string name="wakelock_list">Active Wakelock List</string>
     <string name="wakelock_list_summary">Shows a list with the latest active wakelock and they total time duration</string>
     <string name="wakelock_list_empty">List is empty</string>
-    <string name="wakelock_list_info">Is possible to click and copy\nActive time (hh:mm:ss) | Requests | Wakelock name:</string>
+    <string name="wakelock_list_info">It is possible to click and copy\nActive time (hh:mm:ss) | Requests | Wakelock name:</string>
     <string name="wakelock_test_empty">Empty</string>
     <string name="wakelock_test">Disable a wakelock by name</string>
     <string name="wakelock_test_summary">Allows to disable one wakelock by it\'s name as a test\n Currently: %s</string>

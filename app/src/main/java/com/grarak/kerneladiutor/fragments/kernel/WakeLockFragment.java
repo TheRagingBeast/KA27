@@ -50,7 +50,7 @@ import java.util.List;
 
 public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener, SwitchCardView.DSwitchCard.OnDSwitchCardListener {
 
-    private SwitchCardView.DSwitchCard mSmb135xWakeLockCard, mBlueSleepWakeLockCard, mBlueDroidTimeWakeLockCard, mAlarmTimerWakeLockCard, mSensorIndWakeLockCard, mMsmHsicHostWakeLockCard, mTimerFdWakeLockCard, mNetlinkWakeLockCard;
+    private SwitchCardView.DSwitchCard mSmb135xWakeLockCard, mBlueSleepWakeLockCard, mBlueDroidTimeWakeLockCard, mAlarmTimerWakeLockCard, mIPSWakeLockCard, mSanityWakeLockCard,mSensorIndWakeLockCard, mMsmHsicHostWakeLockCard, mTimerFdWakeLockCard, mNetlinkWakeLockCard;
     private SwitchCardView.DSwitchCard mWlanrxWakelockCard, mWlanctrlWakelockCard, mWlanWakelockCard;
     private SeekBarCardView.DSeekBarCard mWlanrxWakelockDividerCard, mMsmHsicWakelockDividerCard, mBCMDHDWakelockDividerCard;
 
@@ -140,10 +140,32 @@ public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCar
             temp_bool = WakeLock.isAlarmTimerWakeLockActive();
             mAlarmTimerWakeLockCard = new SwitchCardView.DSwitchCard();
             mAlarmTimerWakeLockCard.setTitle(getString(R.string.alarm_wakelock));
+            mAlarmTimerWakeLockCard.setDescription(String.format(getString(R.string.alarm_wakelock_summary), temp_bool ?
+                getString(R.string.enabled) : getString(R.string.disabled)));
             mAlarmTimerWakeLockCard.setChecked(temp_bool);
             mAlarmTimerWakeLockCard.setOnDSwitchCardListener(this);
 
             views.add(mAlarmTimerWakeLockCard);
+        }
+
+        if (WakeLock.hasIPSWakeLock()) {
+            temp_bool = WakeLock.isIPSWakeLockActive();
+            mIPSWakeLockCard = new SwitchCardView.DSwitchCard();
+            mIPSWakeLockCard.setTitle(getString(R.string.ips_wakelock));
+            mIPSWakeLockCard.setChecked(temp_bool);
+            mIPSWakeLockCard.setOnDSwitchCardListener(this);
+
+            views.add(mIPSWakeLockCard);
+        }
+
+        if (WakeLock.hasIPSWakeLock()) {
+            temp_bool = WakeLock.isSanityWakeLockActive();
+            mSanityWakeLockCard = new SwitchCardView.DSwitchCard();
+            mSanityWakeLockCard.setTitle(getString(R.string.sanity_wakelock));
+            mSanityWakeLockCard.setChecked(temp_bool);
+            mSanityWakeLockCard.setOnDSwitchCardListener(this);
+
+            views.add(mSanityWakeLockCard);
         }
 
         if (WakeLock.hasBlueDroidTimeWakeLock()) {

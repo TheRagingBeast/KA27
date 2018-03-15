@@ -244,6 +244,30 @@ public class WakeLock implements Constants {
         return Utils.existFile(ALARMTIMER_WAKELOCK);
     }
 
+    public static void activateIPSWakeLock(boolean active, Context context) {
+        Control.runCommand(active ? "Y" : "N", IPS_WAKELOCK, Control.CommandType.GENERIC, context);
+    }
+
+    public static boolean isIPSWakeLockActive() {
+        return Utils.readFile(IPS_WAKELOCK).equals("Y");
+    }
+
+    public static boolean hasIPSWakeLock() {
+        return Utils.existFile(IPS_WAKELOCK);
+    }
+
+    public static void activateSanityWakeLock(boolean active, Context context) {
+        Control.runCommand(active ? "Y" : "N", SANITY_WAKELOCK, Control.CommandType.GENERIC, context);
+    }
+
+    public static boolean isSanityWakeLockActive() {
+        return Utils.readFile(SANITY_WAKELOCK).equals("Y");
+    }
+
+    public static boolean hasSanityWakeLock() {
+        return Utils.existFile(SANITY_WAKELOCK);
+    }
+
     public static void activateNetlinkWakeLock(boolean active, Context context) {
         Control.runCommand(active ? "Y" : "N", NETLINK_WAKELOCK, Control.CommandType.GENERIC, context);
     }

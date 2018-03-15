@@ -80,6 +80,7 @@ public interface Constants {
     String CPU_BOOST_INPUT_BOOST_FREQ = CPU_BOOST + "/input_boost_freq";
     String CPU_BOOST_WAKEUP = CPU_BOOST + "/wakeup_boost";
     String CPU_BOOST_HOTPLUG = CPU_BOOST + "/hotplug_boost";
+    String PDESIREAUDIO_ENABLE = "/sys/module/snd_soc_wcd9330/parameters/uhqa_mode_pdesireaudio";
 
     // State Notifier
     String STATE_NOTIFIER = "/sys/module/state_notifier/parameters";

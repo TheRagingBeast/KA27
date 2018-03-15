@@ -214,6 +214,18 @@ public class Sound implements Constants {
     public static boolean hasHighPerfModeEnable() {
         return Utils.existFile(HIGHPERF_MODE_ENABLE);
     }
+    
+     public static void enablePDesireAudio(boolean enable, Context context) {
+        Control.runCommand(enable ? "1" : "0", PDESIREAUDIO_ENABLE, Control.CommandType.GENERIC, context);
+    }
+    
+    public static boolean isPDesireAudioEnabled() {
+        return Utils.readFile(PDESIREAUDIO_ENABLE).equals("1");
+    }
+    
+    public static boolean hasPDesireAudio() {
+        return Utils.existFile(PDESIREAUDIO_ENABLE);
+    }
 
     public static void activateSoundControl(boolean active, Context context) {
         Control.runCommand(active ? "Y" : "N", SOUND_CONTROL_ENABLE, Control.CommandType.GENERIC, context);
@@ -233,7 +245,7 @@ public class Sound implements Constants {
                 if (Utils.existFile(file)) return true;
         return false;
     }
-
+    
     public static void activateWcdSpkr_Drv_Wrnd(boolean active, Context context) {
         Control.runCommand(active ? "1" : "0", WCD_SPKR_DRV_WRND, Control.CommandType.GENERIC, context);
     }

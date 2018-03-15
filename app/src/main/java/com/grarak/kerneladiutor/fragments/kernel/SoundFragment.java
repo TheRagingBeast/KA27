@@ -30,6 +30,7 @@ import com.grarak.kerneladiutor.utils.kernel.Sound;
 public class SoundFragment extends RecyclerViewFragment implements SwitchCardView.DSwitchCard.OnDSwitchCardListener, SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener {
 
     private SwitchCardView.DSwitchCard mSoundControlEnableCard;
+    private SwitchCardView.DSwitchCard mPDesireAudioCard;
     private SwitchCardView.DSwitchCard mHighPerfModeEnableCard;
     private SwitchCardView.DSwitchCard mwcdspkr_drv_wrndCard, mwcdHighPerfModeEnableCard;
     private SeekBarCardView.DSeekBarCard mHeadphoneGainCard, mHeadphoneGainLCard, mHeadphoneGainRCard;
@@ -106,13 +107,13 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         addView(mSoundControlEnableCard);
     }
     
-    private void PDesireAudioInit(List<RecyclerViewItem> items) {
-        PDesireAudio = new SwitchCardView.DSwitchCard();
-        PDesireAudio.setTitle(getString(R.string.headset_pdesireaudio));
-        PDesireAudio.setChecked(Sound.isPDesireAudioActive());
-        PDesireAudio.setOnDSwitchListener(this);
+    private void PDesireAudioInit() {
+        mPDesireAudioCard = new SwitchCardView.DSwitchCard();
+        mPDesireAudioCard.setTitle(getString(R.string.headset_pdesireaudio));
+        mPDesireAudioCard.setChecked(Sound.isPDesireAudioActive());
+        mPDesireAudioCard.setOnDSwitchListener(this);
             
-        addView(PDesireAudio);
+        addView(mPDesireAudioCard);
     }
 
     private void highPerfModeEnableInit() {
@@ -240,6 +241,9 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
 
     @Override
     public void onChanged(SeekBarCardView.DSeekBarCard dSeekBarCard, int position) {}
+    public void onChanged(SwitchView switchView, boolean isChecked) {
+                Sound.enablePDesireAudio(isChecked, getActivity());
+            }
 
     @Override
     public void onStop(SeekBarCardView.DSeekBarCard dSeekBarCard, int position) {

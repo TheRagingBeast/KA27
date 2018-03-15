@@ -220,6 +220,8 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
 
     @Override
     public void onChecked(SwitchCardView.DSwitchCard dSwitchCard, boolean checked) {
+        if (dSwitchCard == mPDesireAudioCard)
+            Sound.enablePDesireAudio(checked, getActivity());
         if (dSwitchCard == mSoundControlEnableCard)
             Sound.activateSoundControl(checked, getActivity());
         else if (dSwitchCard == mHeadphoneGainIndependentCard) {
@@ -241,9 +243,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
 
     @Override
     public void onChanged(SeekBarCardView.DSeekBarCard dSeekBarCard, int position) {}
-    public void onChanged(SwitchCardView.DSwitchCard dSwitchCard, boolean isChecked) {
-                Sound.enablePDesireAudio(isChecked, getActivity());
-            }
 
     @Override
     public void onStop(SeekBarCardView.DSeekBarCard dSeekBarCard, int position) {

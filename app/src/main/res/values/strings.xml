@@ -829,6 +829,7 @@
     <string name="wlan_ctrl_wakelock">wlan_ctrl Wakelock</string>
     <string name="wlan_ctrl_wakelock_summary">Allow wlan_ctrl wakelock.\n Currently: %s</string>
     <string name="wlan_wakelock">wlan Wakelock</string>
+    <string name="alarm_wakelock">AlarmTimer Wakelock</string>
     <string name="wlan_wakelock_summary">Allow wlan wakelock.\n Currently: %s</string>
     <string name="wlan_rx_wakelock_divider">wlan_rx Wakelock Divider</string>
     <string name="msm_hsic_wakelock_divider">msm_hsic Wakelock Divider</string>

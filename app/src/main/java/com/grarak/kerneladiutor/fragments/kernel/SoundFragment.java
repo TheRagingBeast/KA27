@@ -30,7 +30,6 @@ import com.grarak.kerneladiutor.utils.kernel.Sound;
 public class SoundFragment extends RecyclerViewFragment implements SwitchCardView.DSwitchCard.OnDSwitchCardListener, SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener {
 
     private SwitchCardView.DSwitchCard mSoundControlEnableCard;
-    private SwitchCardView.DSwitchCard mPDesireAudio;
     private SwitchCardView.DSwitchCard mHighPerfModeEnableCard;
     private SwitchCardView.DSwitchCard mwcdspkr_drv_wrndCard, mwcdHighPerfModeEnableCard;
     private SeekBarCardView.DSeekBarCard mHeadphoneGainCard, mHeadphoneGainLCard, mHeadphoneGainRCard;
@@ -54,7 +53,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         if (Sound.hasThirdPartyTunables()) thirdpartytunablesInit();
 
         if (Sound.hasSoundControlEnable()) soundControlEnableInit();
-        if (Sound.hasPDesireAudio()) PDesireAudioInit();
         if (Sound.hasHighPerfModeEnable()) highPerfModeEnableInit();
         if (Sound.hasHeadphoneGain()) headphoneGainInit();
         if (Sound.hasHandsetMicrophoneGain()) handsetMicrophoneGainInit();
@@ -114,15 +112,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         mHighPerfModeEnableCard.setOnDSwitchCardListener(this);
 
         addView(mHighPerfModeEnableCard);
-    }
-
-    private void PDesireAudioInit() {
-        mPDesireAudio = new SwitchCardView.DSwitchCard();
-        mPDesireAudio.setTitle(getString(R.string.pdesire_audio));
-        mPDesireAudio.setChecked(Sound.isPDesireAudioEnabled());
-        mPDesireAudio.setOnDSwitchCardListener(this);
-
-        addView(mPDesireAudio);
     }
 
     private void headphoneGainInit() {
@@ -233,8 +222,6 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
             getActivity().getSupportFragmentManager().beginTransaction().detach(this).attach(this).commit();
         } else if (dSwitchCard == mHighPerfModeEnableCard)
             Sound.activateHighPerfMode(checked, getActivity());
-        else if (dSwitchCard == mPDesireAudio)
-            Sound.enablePDesireAudio(checked, getActivity());
         else if (dSwitchCard == mwcdHighPerfModeEnableCard)
             Sound.activateWcdHighPerfMode(checked, getActivity());
         else if (dSwitchCard == mwcdspkr_drv_wrndCard)

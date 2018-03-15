@@ -234,18 +234,6 @@ public class Sound implements Constants {
         return false;
     }
 
-    public static void enablePDesireAudio(boolean active, Context context) {
-       Control.runCommand(active ? "1" : "0", PDESIREAUDIO_ENABLE, Control.CommandType.GENERIC, context);
-    }
-
-    public static boolean isPDesireAudioEnabled() {
-        return Utils.readFile(PDESIREAUDIO_ENABLE).equals("1");
-    }
-
-    public static boolean hasPDesireAudio() {
-        return Utils.existFile(PDESIREAUDIO_ENABLE);
-    }
-    
     public static void activateWcdSpkr_Drv_Wrnd(boolean active, Context context) {
         Control.runCommand(active ? "1" : "0", WCD_SPKR_DRV_WRND, Control.CommandType.GENERIC, context);
     }

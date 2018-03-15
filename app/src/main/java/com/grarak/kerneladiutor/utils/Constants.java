@@ -1232,7 +1232,7 @@ public interface Constants {
     String BLUESLEEP_WAKELOCK = "/sys/module/wakeup/parameters/enable_bluesleep_ws";
 
     String BLUEDROID_TIMER_WAKELOCK = "/sys/module/wakeup/parameters/enable_bluedroid_timer_ws";
-    String ALARMTIMER_WAKELOCK = "/sys/module/wakeup/parameters/enable_alarmtimer_timer_ws";
+    String ALARMTIMER_WAKELOCK = "/sys/module/wakeup/parameters/enable_alarmtimer_ws";
 
     String SENSOR_IND_WAKELOCK = "/sys/module/wakeup/parameters/enable_si_ws";
     String MSM_HSIC_HOST_WAKELOCK = "/sys/module/wakeup/parameters/enable_msm_hsic_ws";

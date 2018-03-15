@@ -110,7 +110,7 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
     private void PDesireAudioInit() {
         mPDesireAudioCard = new SwitchCardView.DSwitchCard();
         mPDesireAudioCard.setTitle(getString(R.string.headset_pdesireaudio));
-        mPDesireAudioCard.setChecked(Sound.isPDesireAudioActive());
+        mPDesireAudioCard.setChecked(Sound.isPDesireAudioEnabled());
         mPDesireAudioCard.setOnDSwitchListener(this);
             
         addView(mPDesireAudioCard);

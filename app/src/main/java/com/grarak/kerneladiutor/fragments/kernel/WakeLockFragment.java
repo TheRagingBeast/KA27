@@ -50,7 +50,7 @@ import java.util.List;
 
 public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener, SwitchCardView.DSwitchCard.OnDSwitchCardListener {
 
-    private SwitchCardView.DSwitchCard mSmb135xWakeLockCard, mBlueSleepWakeLockCard, mBlueDroidTimeWakeLockCard, mSensorIndWakeLockCard, mMsmHsicHostWakeLockCard, mTimerFdWakeLockCard, mNetlinkWakeLockCard;
+    private SwitchCardView.DSwitchCard mSmb135xWakeLockCard, mBlueSleepWakeLockCard, mBlueDroidTimeWakeLockCard, mAlarmTimerWakeLockCard,  mAlarmTimerWakeLockCard, mSensorIndWakeLockCard, mMsmHsicHostWakeLockCard, mTimerFdWakeLockCard, mNetlinkWakeLockCard;
     private SwitchCardView.DSwitchCard mWlanrxWakelockCard, mWlanctrlWakelockCard, mWlanWakelockCard;
     private SeekBarCardView.DSeekBarCard mWlanrxWakelockDividerCard, mMsmHsicWakelockDividerCard, mBCMDHDWakelockDividerCard;
 
@@ -134,6 +134,16 @@ public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCar
             mBlueSleepWakeLockCard.setOnDSwitchCardListener(this);
 
             views.add(mBlueSleepWakeLockCard);
+        }
+        
+        if (WakeLock.hasAlarmTimerWakeLock()) {
+            temp_bool = WakeLock.isAlarmTimerWakeLockActive();
+            mAlarmTimerWakeLockCard = new SwitchCardView.DSwitchCard();
+            mAlarmTimerWakeLockCard.setTitle(getString(R.string.alarm_wakelock));
+            mAlarmTimerWakeLockCard.setChecked(temp_bool);
+            mAlarmTimerWakeLockCard.setOnDSwitchCardListener(this);
+
+            views.add(mAlarmTimerWakeLockCard);
         }
 
         if (WakeLock.hasBlueDroidTimeWakeLock()) {

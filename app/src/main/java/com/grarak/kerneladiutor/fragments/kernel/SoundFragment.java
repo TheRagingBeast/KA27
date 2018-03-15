@@ -53,12 +53,13 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         if (Sound.hasThirdPartyTunables()) thirdpartytunablesInit();
 
         if (Sound.hasSoundControlEnable()) soundControlEnableInit();
+        if (Sound.hasPDesireAudio()) PDesireAudioInit();
         if (Sound.hasHighPerfModeEnable()) highPerfModeEnableInit();
         if (Sound.hasHeadphoneGain()) headphoneGainInit();
         if (Sound.hasHandsetMicrophoneGain()) handsetMicrophoneGainInit();
         if (Sound.hasCamMicrophoneGain()) camMicrophoneGainInit();
-        //if (Sound.hasSpeakerGain()) speakerGainInit();
-        // if (Sound.hasHeadphonePowerAmpGain()) headphonePowerAmpGainInit();
+        if (Sound.hasSpeakerGain()) speakerGainInit();
+        if (Sound.hasHeadphonePowerAmpGain()) headphonePowerAmpGainInit();
         if (Sound.hasMicrophoneGain()) microphoneGainInit();
         if (Sound.hasVolumeGain()) volumeGainInit();
     }
@@ -103,6 +104,15 @@ public class SoundFragment extends RecyclerViewFragment implements SwitchCardVie
         mSoundControlEnableCard.setOnDSwitchCardListener(this);
 
         addView(mSoundControlEnableCard);
+    }
+    
+    private void PDesireAudioInit(List<RecyclerViewItem> items) {
+        mPDesireAudioCard = new SwitchCardView.DSwitchCard();
+        mPDesireAudioCard.setDescription(getString(R.string.headset_pdesireaudio));
+        mPDesireAudioCard.setChecked(Sound.isPDesireAudioActive());
+        mPDesireAudioCard.setOnSwitchListener(this) {
+            
+        addView(mPDesireAudioCard);
     }
 
     private void highPerfModeEnableInit() {

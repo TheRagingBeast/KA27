@@ -1056,8 +1056,6 @@ Default state for all wakelocks is ON, disable a wakelock can have a reverse eff
     <string name="wakeup_threshold">Wakeup Threshold</string>
     <string name="wakeup_threshold_summary">"Read:
 Wake up devices blocking to write to the entropy pool (i.e. sources which will use the aforementioned ioctl to add entropy to the pool) when the pool gets low. It will not necessarily have the effect of adding entropy.
-
-Write:
 Is opposite, this is the number of bits of entropy required to be Available before entropy allow anything to read from /dev/random. /dev/urandom ignores this parameter (since reads from it are nonblocking and don't wait for entropy, instead allowing pseudorandom data to be read)."</string>
     <string name="went_wrong">Something went wrong!</string>
     <string name="white_point">White Point</string>
@@ -1093,3 +1091,500 @@ Original | Compressed | Compress Ratio %"</string>
     <string name="zram_ro">Z-RAM Read Only</string>
     <string name="ztzip">Zt-Zip</string>
 </resources>
+    <!-- Wake Controls -->
+    <string name="vib_strength">Wake Gestures Vibration Strength</string>
+    <string name="vib_strength_summary">This value is specific to wake gestures and independent of the normal vibration strength. It is purely for the kernel driver. Gestures controlled by third party apps will not use this value.</string>
+    <string name="dt2w">DT2W (DoubleTap2Wake)</string>
+    <string name="dt2w_summary">Wake up your device by double tapping the screen.</string>
+    <string name="s2w_title">S2W (Sweep2Wake)</string>
+    <string name="s2w">Enabled</string>
+    <string name="s2w_summary">Wake up your device by swiping on the screen to the selected direction:</string>
+    <string name="lenient">Sweep2Wake Leniency</string>
+    <string name="lenient_summary">Only require 1st and 4th button to trigger Sweep2Wake.</string>
+    <string name="s2s">S2S (Sweep2Sleep)</string>
+    <string name="t2w">Tap2Wake</string>
+    <string name="t2w_summary">Wake up your device by tapping the screen.</string>
+    <string name="wake">Wake</string>
+    <string name="dt2w_charging">DoubleTap2Wake while charging</string>
+    <string name="s2w_charging">Sweep2Wake while charging</string>
+    <string name="dt2w_s2w_charging">DoubleTap2Wake + Sweep2Wake while charging</string>
+    <string name="sleep_summary">Sweep across the bottom of the screen to sleep.</string>
+    <string name="dt2s">DoubleTap2Sleep</string>
+    <string name="dt2s_summary">Lock your device by double tapping on the top of the screen.</string>
+    <string name="slide_up">Slide up</string>
+    <string name="slide_down">Slide down</string>
+    <string name="slide_left">Slide left</string>
+    <string name="slide_right">Slide right</string>
+    <string name="draw_e">Draw E</string>
+    <string name="draw_o">Draw O</string>
+    <string name="draw_w">Draw W</string>
+    <string name="draw_c">Draw C</string>
+    <string name="draw_m">Draw M</string>
+    <string name="camera_gesture">Camera Gesture</string>
+    <string name="camera_gesture_summary">Launch default camera by drawing a circle on the screen.\nThis circle is not easy to make right + S2W when enabled can make this featuring harder to use.</string>
+    <string name="pocket_mode">Pocket Mode</string>
+    <string name="pocket_mode_summary">Enabling this will turn off wake controls when device in pocket.</string>
+    <string name="wake_timeout">Wake Timeout</string>
+    <string name="wake_timeout_summary">Set a duration when the wake controls will be disabled after the screen goes off.</string>
+    <string name="power_key_suspend">Power Key Suspend</string>
+    <string name="power_key_suspend_summary">Enabling this will turn off wake controls when the screen is turned off by the power key.</string>
+    <string name="wake_S2W_time">Sweep2Wake TimeOut</string>
+    <string name="wake_S2W_time_summary">Used to control the time that a sweep has to occur within to register as a sweep event</string>
+    <string name="wake_dt2w_timebetweentaps">DoubleTap2Wake TimeOut</string>
+    <string name="wake_dt2w_timebetweentaps_summary">Used to control the time that touches have to occur within to register as a DT2W event</string>
+    <string name="wake_dt2w_featherx">DoubleTap2Wake Feather (Horizontal axis)</string>
+    <string name="wake_dt2w_featherx_summary">Used to control the allowed distance between tap #1 and tap #2 along the Horizontal axis. This may help with unintentional wakes quite a bit</string>
+    <string name="wake_dt2w_feathery">DoubleTap2Wake Feather (Vertical axis)</string>
+    <string name="wake_dt2w_feathery_summary">Used to control the allowed distance between tap #1 and tap #2 along the Vertical axis. This may help with unintentional wakes quite a bit</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
+    <string name="any">Any</string>
+    <string name="or">or</string>
+
+    <!-- Sound -->
+    <string name="driver_tunables">SOC Driver Tunables</string>
+    <string name="third_party_driver_tunables">Tunables from Third-Party Drivers</string>
+    <string name="sound_control">Sound Control</string>
+    <string name="headset_highperf_mode">Headset High Performance Mode</string>
+    <string name="headset_highperf_mode_summary">This helps prevent distortion at higher volumes.</string>
+    <string name="headphone_gain_independent">Independent Headphone Gain</string>
+    <string name="headphone_gain_independent_summary">Set separete Left/Right values.</string>
+    <string name="headphone_gain_l">Headphone Gain Left</string>
+    <string name="headphone_gain_r">Headphone Gain Right</string>
+    <string name="headphone_gain">Headphone Gain</string>
+    <string name="handset_microphone_gain">Handset Microphone Gain</string>
+    <string name="cam_microphone_gain">Camcorder Microphone Gain</string>
+    <string name="speaker_gain">Speaker Gain</string>
+    <string name="headphone_poweramp_gain">Headphone PowerAmp Gain</string>
+    <string name="microphone_gain">Microphone Gain</string>
+    <string name="volume_gain">Volume Gain</string>
+    <string name="headset_mspkr_drv_mode">Speaker Driver Leakage</string>
+    <string name="headset_mspkr_drv_mode_summary">Run software workaround to avoid leakage on the speaker drive</string>
+
+    <!-- Battery -->
+    <string name="battery_voltage">Battery Voltage</string>
+    <string name="battery_level">Battery Level</string>
+    <string name="battery_temperature">Battery Temperature</string>
+    <string name="battery_charging_current">Battery Charging/Discharging Current</string>
+    <string name="battery_charging_mode">Battery Charging Mode</string>
+    <string name="battery_charging_mode_none">Charger not connected</string>
+    <string name="battery_charging_mode_weak">Charge current very weak.\nProbably defective charger and/or cable.</string>
+    <string name="battery_health">Battery Health</string>
+    <string name="usb_fast_charge">USB Fast Charge</string>
+    <string name="usb_fast_charge_summary">Device will charge faster when connected with USB. Replug your charger when changing this option.</string>
+    <string name="blx">Battery Life eXtender</string>
+    <string name="blx_summary">Set a limit for the capacity to which the battery will be charged by passing a value between 0 and 100.</string>
+    <string name="custom_charge_rate">Charge Rate</string>
+    <string name="charge_rate">Battery Charging Rate</string>
+    <string name="charge_rate_summary">Set Custom Battery Charge Rate. Caution: Exceeding 1250mA may damage your charging driver.</string>
+
+    <!-- I/O Scheduler -->
+    <string name="internal_storage">Internal Storage</string>
+    <string name="external_storage">External Storage</string>
+    <string name="scheduler">Scheduler</string>
+    <string name="scheduler_summary">Set the active I/O elevator algorithm. The Scheduler decides how to handle I/O requests.</string>
+    <string name="scheduler_tunable">Scheduler Tunable</string>
+    <string name="scheduler_tunable_summary">The various configuration items which are Scheduler-dependent.</string>
+    <string name="read_ahead">Read-ahead</string>
+    <string name="read_ahead_summary">The Read-ahead value on the phone memory.</string>
+    <string name="rotational">Rotational Storage</string>
+    <string name="rotational_summary">Treat device as rotational storage.</string>
+    <string name="iostats">I/O Stats</string>
+    <string name="iostats_summary">Maintain I/O statistics for this storage device. Disabling will break I/O monitoring applications.</string>
+    <string name="iorandom">Add Random</string>
+    <string name="iorandom_summary">Draw entropy from spinning (rotational) storage.</string>
+    <string name="ioaffitiny">RQ Affinity</string>
+    <string name="ioraffinity_summary">Try to have scheduler requests complete on the Core they were made from.</string>
+
+    <!-- Kernel Samepage Merging -->
+    <string name="ksm_full_scans">Full scans</string>
+    <string name="ksm_pages_shared">Pages shared</string>
+    <string name="ksm_pages_sharing">Pages sharing</string>
+    <string name="ksm_pages_unshared">Pages unshared</string>
+    <string name="ksm_pages_volatile">Pages volatile</string>
+    <string name="ksm_enable">Enable KSM</string>
+    <string name="ksm_enable_summary">Reduces memory usage but has an impact on the CPU usage.</string>
+    <string name="ksm_pages_to_scan">Pages to scan</string>
+    <string name="ksm_sleep_milliseconds">Sleep between scans</string>
+    <string name="ksm_deferred_timer">Deferred timer</string>
+    <string name="ksm_deferred_timer_summary">Prevents KSM activities when the CPU is at sleep, reduces some CPU usage in return for less memory savings.</string>
+    <string name="uksm_cpu_use">Max CPU Usage</string>
+    <string name="uksm_cpu_use_summary">Max CPU percentage for UKSM to use when merging pages</string>
+    <string name="uksm_cpu_governor">KSM Governor</string>
+    <string name="uksm_cpu_governor_summary">Set the governor for KSM</string>
+
+    <!-- Low Memory Killer -->
+    <string name="lmk_minfree">LMK Min free</string>
+    <string name="foreground_app">Foreground Applications</string>
+    <string name="visible_app">Visible Applications</string>
+    <string name="secondary_server">Secondary Server</string>
+    <string name="hidden_app">Hidden Applications</string>
+    <string name="content_providers">Content Providers</string>
+    <string name="empty_app">Empty Applications</string>
+    <string name="bhb27_recommended">BHB27 Recommended</string>
+    <string name="moto_default">Moto Default</string>
+    <string name="very_light">Very light</string>
+    <string name="light">Light</string>
+    <string name="medium">Medium</string>
+    <string name="very_aggressive">Very Aggressive</string>
+    <string name="vmpressure_file_min">VM File Min</string>
+    <string name="vmpressure_file_min_summary">This parameter controls the behavior of LMK when VM pressure is in the range of 90&#8211;94 (is a pseudo minfree value, higher than the highest configured value in minfree LMK values)</string>
+    <string name="adaptive">Adaptive Low Memory Killer</string>
+    <string name="adaptive_summary">Make LMK more aggressive dynamically when a thrashing scenario is detected.</string>
+    <string name="values_in_mb">(values in MB)</string>
+    <string name="lmk_count">LMK Kill Count</string>
+    <string name="lmk_count_summary">Tasked Killed</string>
+    <string name="lmk_profiles_original">Profiles (General use)</string>
+    <string name="lmk_bhb_profiles">BHB27 Profiles</string>
+    <string name="lmk_profiles">LMK Profiles</string>
+    <string name="lmk_profiles_summary">Click on one of the Profile below to set its values to LMK Min Free parameters.\n\nValues will be set according this order:\nA,B,C,D,E,F,G\nWere:\nA = Foreground Applications\nB = Visible Applications\nC = Secondary Server\nD = Hidden Applications\nE = Content Provider\nF = Empty Applications\nG = VM Pressure Min\n\n*G VM Pressure Min, only available in BHB27 Kernel</string>
+
+    <!-- Virtual Memory -->
+    <string name="process_reclaim">Process Reclaim</string>
+    <string name="process_reclaim_enable">Process Reclaim</string>
+    <string name="process_reclaim_enable_summary">Anon pages of inactive tasks can be reclaimed, depending on memory pressure. Memory pressure is detected using VM pressure events.</string>
+    <string name="process_reclaim_pressure">Pressure (Last registered state)</string>
+    <string name="process_reclaim_avg_eff">Average Efficiency (Last registered state)</string>
+    <string name="process_reclaim_per_swap_size">Per Swap Size</string>
+    <string name="process_reclaim_per_swap_size_summary">The max number of pages tried to be reclaimed in a single run.</string>
+    <string name="process_reclaim_swap_eff_win">Time Period</string>
+    <string name="process_reclaim_swap_eff_win_summary">Scheduling process reclaim work-queue unnecessarily when the reclaim efficiency is low does not make sense. We try to detect a drop in efficiency and disable reclaim for a time period. This period and the period for which we monitor a drop in efficiency is defined by (Time Period VS Optimal Efficiency)</string>
+    <string name="process_reclaim_swap_opt_eff">Optimal Efficiency</string>
+    <string name="process_reclaim_swap_opt_eff_summary">Optimal efficiency values used as threshold by (Time Period)</string>
+    <string name="process_reclaim_pressure_max">Pressure Max</string>
+    <string name="process_reclaim_pressure_max_summary">Max Vm pressure value where process reclaim operates</string>
+    <string name="process_reclaim_pressure_min">Pressure Min</string>
+    <string name="process_reclaim_pressure_min_summary">Min Vm pressure value where process reclaim operates</string>
+    <string name="zram">Z-RAM</string>
+    <string name="disksize">Disksize</string>
+    <string name="disksize_summary">Attempts to increase performance by avoiding paging on physical storage, instead using a compressed virtual device in RAM. Paging takes place in RAM until it is necessary to use the swap space on physical storage.</string>
+    <string name="zram_comp_algo">Compression Algorithm</string>
+    <string name="zram_comp_algo_summary">Compression size LZO smaller then LZ4, compression/decompression speed LZ4 better then LZO</string>
+    <string name="zram_comp_streams">Concurrent Compress Operations</string>
+    <string name="zram_ro">Z-RAM Read Only</string>
+    <string name="disksize_used">Disk Size | Free | Used | Used &#37;</string>
+    <string name="memosize_used">Total Size | Free | Free &#37;</string>
+    <string name="read_write">Read | Write</string>
+    <string name="total">Total</string>
+    <string name="fail">Fail</string>
+    <string name="zram_data_size">Data size\nOriginal | Compressed | Compress Ratio &#37;</string>
+    <string name="dirty_ratio">Dirty Ratio</string>
+    <string name="dirty_ratio_summary">Contains, as a percentage of total system memory, the number of pages at which a process which is generating disk writes will itself start writing out dirty data. Lower the amount of unwritten write cache to reduce lags when a huge write is required.</string>
+    <string name="dirty_background_ratio">Dirty Background Ratio</string>
+    <string name="dirty_background_ratio_summary">Contains, as a percentage of total system memory, the number of pages at which the pdflush background writeback daemon will start writing out dirty data.</string>
+    <string name="dirty_expire_centisecs">Dirty Expire Centisecs</string>
+    <string name="dirty_expire_centisecs_summary">This tunable is used to define when dirty data is old enough to be eligible for writeout by the kernel flusher threads.  It is expressed in 100\'ths of a second.  Data which has been dirty in-memory for longer than this interval will be written out next time a flusher thread wakes up.</string>
+    <string name="dirty_writeback_centisecs">Dirty Writeback Centisecs</string>
+    <string name="dirty_writeback_centisecs_summary">The kernel flusher threads will periodically wake up and write old data out to disk.  This tunable expresses the interval between those wakeups, in 100\'ths of a second.  Setting this to zero disables periodic writeback altogether.</string>
+    <string name="dynamic_dirty_writeback_centisecs">Dynamic Dirty Writeback</string>
+    <string name="dynamic_dirty_writeback_centisecs_summary">This feature allows to have two different intervals for dirty page writebacks and to dynamically manage them when the system has been resumed (it\'s active) or when has been suspended.</string>
+    <string name="dirty_writeback_suspend_centisecs">Suspend Dirty Writeback Centisecs</string>
+    <string name="dirty_writeback_suspend_centisecs_summary">The kernel flusher threads will periodically wake up and write old data out to disk.  This tunable expresses the interval between those wakeups during suspend, in 100\'ths of a second.  Setting this to zero disables periodic writeback altogether.</string>
+    <string name="dirty_writeback_active_centisecs">Active Writeback Centisecs</string>
+    <string name="dirty_writeback_active_centisecs_summary">The kernel flusher threads will periodically wake up and write old data out to disk.  This tunable expresses the interval between those wakeups while active, in 100\'ths of a second.  Setting this to zero disables periodic writeback altogether.</string>
+    <string name="overcommit_ratio">Overcommit Ratio</string>
+    <string name="overcommit_ratio_summary">Percentage of physical memory size to include in overcommit calculations.</string>
+    <string name="swappiness">Swappiness</string>
+    <string name="swappiness_summary">Controls the tendency of the kernel to move processes out of physical memory and onto the swap disk. Because disks are much slower than RAM, this can lead to slower response times for system and applications if processes are too aggressively moved out of memory.</string>
+    <string name="vfs_cache_pressure">VFS Cache Pressure</string>
+    <string name="vfs_cache_pressure_summary">Controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects.</string>
+    <string name="laptop_mode">Laptop Mode</string>
+    <string name="laptop_mode_summary">This option will delay the writebacks of file system bits cached in RAM while screen is ON (Enable for better performance at a slight risk of possible data loss if crashed or sudden loss of power).</string>
+
+    <string name="min_free_kbytes">Min free Kilobytes</string>
+    <string name="min_free_kbytes_summary">This is used to force the Linux VM to keep a minimum number of kilobytes free. The VM uses this number to compute a pages_min value for each lowmem zone in the system. Each lowmem zone gets a number of reserved free pages based proportionally on its size.</string>
+    <string name="extra_free_kbytes">Extra Free Kilobytes</string>
+    <string name="extra_free_kbytes_summary">This parameter tells the VM to keep extra free memory between the threshold where background reclaim (kswapd) kicks in, and the threshold where direct reclaim (by allocating processes) kicks in.</string>
+
+    <!-- Entropy -->
+    <string name="available">Available</string>
+    <string name="poolsize">Poolsize</string>
+    <string name="wakeup_threshold">Wakeup Threshold</string>
+    <string name="wakeup_threshold_summary">Read:\nWake up devices blocking to write to the entropy pool (i.e. sources which will use the aforementioned ioctl to add entropy to the pool) when the pool gets low. It will not necessarily have the effect of adding entropy.\n\nWrite:\nIs opposite, this is the number of bits of entropy required to be Available before entropy allow anything to read from /dev/random. /dev/urandom ignores this parameter (since reads from it are nonblocking and don\'t wait for entropy, instead allowing pseudorandom data to be read).</string>
+    <string name="read">Read</string>
+    <string name="write">Write</string>
+
+    <!-- Misc Controls -->
+    <string name="se_linux">Toggle SE Linux</string>
+    <string name="se_linux_summary">Current SELinux Status:</string>
+    <string name="vibration_strength">Vibration Strength</string>
+    <string name="android_logger">Android logging (LOGD or logcat)</string>
+    <string name="android_logger_summary">Disable android logging can save some power, but in the case of a problem there will be no logs to check, let it enabled to debug a problem.</string>
+    <string name="bcl">Battery Current Limit Driver(BCL)</string>
+    <string name="bcl_summary">Enable or Disable BCL completely</string>
+    <string name="bcl_max_freq">BCL Max Frequency</string>
+    <string name="bcl_max_freq_summary">The maximum frequency value the BCL driver will mitigate the CPU\'s.</string>
+    <string name="bcl_voltage_high">BCL high voltage threshold</string>
+    <string name="bcl_voltage_high_summary">The battery voltage threshold above which the BCL driver clears the previously applied mitigation, disables the battery current monitoring, and starts monitoring for low battery voltage.</string>
+    <string name="bcl_voltage_low">BCL low voltage threshold</string>
+    <string name="bcl_voltage_low_summary">The battery voltage threshold below which the BCL driver starts monitoring the battery current thresholds and mitigates the CPU on the event of high load.</string>
+    <string name="bcl_hotplug">Battery Current Limit Driver - Hotplugging</string>
+    <string name="bcl_hotplug_summary">Enable or Disable BCL Hotplugging</string>
+    <string name="bcl_cores">BCL Hotplugging</string>
+    <string name="bcl_cores_summary">Choose how many cores will be unplugged when the BCL driver starts to mitigate the CPU</string>
+    <string name="bcl_cores_none">None</string>
+    <string name="bcl_cores_1">1 (Core 3)</string>
+    <string name="bcl_cores_2">2 (Core 1 and 3)</string>
+    <string name="bcl_cores_3">2 (Core 2 and 3)</string>
+    <string name="bcl_cores_4">3 (Core 1 to 3)</string>
+    <string name="crc">Software CRC control</string>
+    <string name="crc_summary">CRC is a mechanism aiming to prevent data corruption when enabled. Data blocks can lose up to 30 &#37; of their performance.</string>
+    <string name="fsync">Fsync</string>
+    <string name="fsync_summary">Disable for better file system performance at the risk of data loss in case of a system crash.</string>
+    <string name="dynamic_fsync">Dynamic Fsync</string>
+    <string name="dynamic_fsync_summary">When enabled and screen is on, fsync operation is asynchronous. When screen is off, this operation is done synchronously.</string>
+    <string name="gentlefairsleepers">Gentle Fair Sleepers</string>
+    <string name="gentlefairsleepers_summary">Only give sleepers 50 &#37; of their service deficit. Disabling this can save a little battery power.</string>
+    <string name="power_suspend_mode">Power Suspend Mode</string>
+    <string name="power_suspend_mode_summary">Kernel Mode, LCD Hooks and Highest Level Hook are automatically managed by the kernel. To manually enable or disable the Power Suspend State choose User Mode.</string>
+    <string name="state_notifier">State Notifier</string>
+    <string name="state_notifier_summary">A new state notifier driver by Neobuddy89.\n\nDesign to improve communication between drivers and suspend/resume routine.</string>
+    <string name="state_notifier_mode">State Notifier Mode</string>
+    <string name="state_notifier_mode_summary_enabled">Enable to see tunable.\nToggle between State and FB Notifiers.\n\nCurrently: State Notifier</string>
+    <string name="state_notifier_mode_summary_disabled">Enable to see tunable.\nToggle between State and FB Notifiers.\n\nCurrently: FB Notifier</string>
+    <string name="state_defer">State Notifier Suspended Defer Time</string>
+    <string name="state_defer_summary">When suspended, prevents suspend routines wait X seconds to prevent false/very short suspend calls.(default 10sec)</string>
+    <string name="autosleep">Autosleep</string>
+    <string name="userspace">Userspace</string>
+    <string name="lcd_panel">LCD Panel</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="power_suspend_state">Power Suspend State</string>
+    <string name="power_suspend_state_summary">Kernel power management driver when screen is off. Better battery savings if enabled. Note: You can only change this setting if Power Suspend Mode is in User Mode.</string>
+    <string name="network">Network</string>
+    <string name="tcp">TCP Congestion Algorithm</string>
+    <string name="tcp_summary">The Transmission Control Protocol is one of the Core protocols of the Internet protocol suite (IP), and is so common that the entire suite is often called TCP/IP.</string>
+    <string name="hostname">Hostname</string>
+    <string name="adb_over_wifi">ADB Over WiFi</string>
+    <string name="adb_over_wifi_summary">Enable ADB over WiFi</string>
+    <string name="adb_over_wifi_connect_summary">Enable ADB over WiFi. Connect to: </string>
+    <string name="wakelock">Wakelocks</string>
+    <string name="wakelocks_summary">Wakelock is a mechanism of power management service in Android OS, which can be used to keep CPU awake (Partial wakelock) and keep the screen on (Full wakelock).\n\nToggle on: Service can acquire a wakelock.\nToggle off: Service cannot acquire a wakelock.\n\nDefault state for all wakelocks is ON, disable a wakelock can have a reverse effect (over discharge of the battery) and is rare but can cause a random reboot, so re-enable in case of a problem.</string>
+    <string name="smb135x_wakelock">smb135x Wakelock</string>
+    <string name="smb135x_wakelock_summary">Allow wakelock when power disconnected.\n Currently: %s</string>
+    <string name="bluesleep_wakelock">BlueSleep Wakelock</string>
+    <string name="bluesleep_wakelock_summary">Allow BlueSleep Wakelock.\n Currently: %s</string>
+    <string name="bluedroid_time_wakelock">BlueDroid Time Wakelock</string>
+    <string name="bluedroid_time_wakelock_summary">Allow BlueDroid Time Wakelock.\n Currently: %s</string>
+    <string name="sensor_ind_wakelock">sensor_ind Wakelock</string>
+    <string name="sensor_ind_wakelock_summary">Allow wakelock when Ambient Display disabled.\n Currently: %s</string>
+    <string name="timerfd_wakelock">TimerFd Wakelock</string>
+    <string name="timerfd_wakelock_summary">Allow TimerFd wakelock.\n Currently: %s</string>
+    <string name="netlink_wakelock">NetLink Wakelock</string>
+    <string name="netlink_wakelock_summary">Allow NetLink wakelock.\n Currently: %s</string>
+    <string name="msm_hsic_host_wakelock">msm_hsic_host Wakelock</string>
+    <string name="msm_hsic_host_wakelock_summary">Allow msm_hsic_host wakelock.\n Currently: %s</string>
+    <string name="wlan_rx_wakelock">wlan_rx Wakelock</string>
+    <string name="wlan_rx_wakelock_summary">Allow wlan_rx wakelock.\n Currently: %s</string>
+    <string name="wlan_ctrl_wakelock">wlan_ctrl Wakelock</string>
+    <string name="wlan_ctrl_wakelock_summary">Allow wlan_ctrl wakelock.\n Currently: %s</string>
+    <string name="wlan_wakelock">wlan Wakelock</string>
+    <string name="wlan_wakelock_summary">Allow wlan wakelock.\n Currently: %s</string>
+    <string name="wlan_rx_wakelock_divider">wlan_rx Wakelock Divider</string>
+    <string name="msm_hsic_wakelock_divider">msm_hsic Wakelock Divider</string>
+    <string name="bcmdhd_wakelock_divider">BCMDHD Wakelock Divider</string>
+    <string name="wakelock_list">Active Wakelock List</string>
+    <string name="wakelock_list_summary">Shows a list with the latest active wakelock and they total time duration</string>
+    <string name="wakelock_list_empty">List is empty</string>
+    <string name="wakelock_list_info">Is possible to click and copy\nActive time (hh:mm:ss) | Requests | Wakelock name:</string>
+    <string name="wakelock_test_empty">Empty</string>
+    <string name="wakelock_test">Disable a wakelock by name</string>
+    <string name="wakelock_test_summary">Allows to disable one wakelock by it\'s name as a test\n Currently: %s</string>
+    <string name="wakelock_test_hint">The wakelock name</string>
+    <string name="wakelock_test_forbidden_special">Forbidden space in the wakelock name!</string>
+    <string name="cstates">Krait C-States Settings</string>
+    <string name="c0state">C0 (WFI)</string>
+    <string name="c0state_summary">Shallowest Sleep with instant wake up.</string>
+    <string name="c1state">C1 (Retention)</string>
+    <string name="c1state_summary">Slightly deeper sleep with slight latency when waking up. (Disable this if you encounter screen flickering)</string>
+    <string name="c2state">C2 (Stand Alone Power Collapse)</string>
+    <string name="c2state_summary">Deeper sleep with longer latency when waking up.</string>
+    <string name="c3state">C3 (Power Collapse)</string>
+    <string name="c3state_summary">Really deep sleep with longest latency when waking up.</string>
+    <string name="battery_led">Battery LED Full charge</string>
+    <string name="battery_led_summary">Turn on green front LED when battery reaches 100&#37;</string>
+    <string name="moto_touchx">Moto Predictive Touch driver</string>
+    <string name="moto_touchx_summary">A algorithm that uses past position and velocity of a touch event to predict touch position in the future, so that screen updates are made anticipating the future position, mitigating the inherent latency of the system, making the system more responsive.</string>
+
+    <!-- Plugins -->
+
+    <!-- Downloads -->
+    <string name="xda">XDA</string>
+
+    <!-- Backup -->
+    <string name="no_backups">No backups</string>
+    <string name="flash_img">Flash IMG</string>
+    <string name="flashing">Flashing</string>
+    <string name="boot" translatable="false">Boot</string>
+    <string name="fota" translatable="false">Fota</string>
+    <string name="backing_up">Backing up</string>
+    <string name="empty_name">Name is empty!</string>
+    <string name="backup_already_exists">A backup with the same name already exists. Delete it first!</string>
+    <string name="restore">Restore</string>
+    <string name="delete">Delete</string>
+    <string name="overwrite_question">Overwrite %s?</string>
+    <string name="restoring">Restoring</string>
+    <string name="delete_question">Delete %s?</string>
+
+    <!-- Build prop Editor -->
+    <string name="items_found">%d items found</string>
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="key">Key</string>
+    <string name="value">Value</string>
+    <string name="backup_created">Backup has been created in %s.</string>
+    <string name="search">Search</string>
+
+    <!-- Profile -->
+    <string name="no_profiles">No profiles</string>
+    <string name="profile_description">Adding a new profile:\nSet a name, and select sections to be saved to this profile.\n*Don\'t select CPU Voltage if you plane to share this.</string>
+    <string name="profile_information">Profiles:\n Adding a profile will save your current settings to Internal Storage/KA_profiles/profiles.json. You can apply them later, and share with others.\n\nPer App Settings:\n Enable a pre saved profile to automatic load the Kernel Adiutor settings based on the start of foreground app, it is saved on Internal Storage/KA_profiles/per_app.json.\n\nTip:\n 1. If you plan to share a profile do not Select CPU Voltage when making a profile, as it device runs on a different voltage table.\n 2. Do Not share Per app Profiles as it person have a different set of apps</string>
+    <string name="name">Name</string>
+    <string name="select_all">Select all</string>
+    <string name="apply">Apply</string>
+    <string name="removed_all_sections">You removed all sections! No profiles for you.</string>
+    <string name="no_settings">No settings found!</string>
+    <string name="press_again_to_apply">Press again to apply.</string>
+    <string name="applying_profile">Applying %s</string>
+    <string name="replace_profile">Do you want to replace %s?</string>
+    <string name="set_per_app">Set Per App Settings</string>
+    <string name="per_app_title">Select Apps that will activate this profile:</string>
+
+    <!-- Recovery -->
+    <string name="reboot">Reboot</string>
+    <string name="reboot_soft">Soft Reboot</string>
+    <string name="reboot_recovery">Reboot Recovery</string>
+    <string name="reboot_bootloader">Reboot Bootloader</string>
+    <string name="reboot_download">Reboot Download</string>
+    <string name="confirm">Are you sure?</string>
+    <string name="wipe_data">Wipe Data</string>
+    <string name="wipe_cache">Wipe Cache</string>
+    <string name="flash_zip">Flash Zip</string>
+    <string name="flash_now">Flash Now</string>
+    <string name="flash_now_confirm">Do you want to run your actions? Your device will reboot into recovery and the actions will run in the order as you added them.</string>
+    <string name="add_action_first">You have to add an action first.</string>
+
+    <!-- Init.d -->
+    <string name="emulate_initd">Emulate Init.d</string>
+    <string name="emulate_initd_summary">If your device does not support Init.d you can enable Emulate Init.d. By enabling the Init.d Emulation the application will run the scripts after your device boots up, but before apply on boot.</string>
+    <string name="executing">Executing</string>
+    <string name="execute">Execute&#8230;</string>
+    <string name="no_scripts_found">No scripts found!</string>
+    <string name="starting_initd">Starting Init.d emulation</string>
+    <string name="finishing_initd">Finishing Init.d emulation</string>
+    <string name="file_name">Name of file</string>
+
+    <!-- Logs -->
+    <string name="ind_logs">Individual logs</string>
+    <string name="grep_log">Grep a Log</string>
+    <string name="search_log">Search in a Log</string>
+    <string name="search_log_summary">Click to search in a log, the result can be copied or saved to a file</string>
+    <string name="log_hint">Enter Text don\'t use ( - \' \")</string>
+    <string name="empty_text">Entered text is empty!</string>
+    <string name="search_dialog">Write the text to search:</string>
+    <string name="search_dialog_summary">Some special characters are forbidden ( - \' \")\nThe search is case insensitive\nRecommendation Use only one space between characters</string>
+    <string name="zip_log">One click All Logs to a ZIP</string>
+    <string name="zip_log_summary">Generates a .zip file with all individual logs to:\n/sdcard/KA_Logs/logs%s.zip</string>
+    <string name="logcat">Logcat</string>
+    <string name="logcat_summary">Copy logcat to:\n/sdcard/KA_Logs/logcat%s.txt</string>
+    <string name="log_radio">Radio Log</string>
+    <string name="log_radio_summary">Copy Radio Log to:\n/sdcard/KA_Logs/radio%s.txt</string>
+    <string name="log_events">Events Log</string>
+    <string name="log_events_summary">Copy Events Log to:\n/sdcard/KA_Logs/events%s.txt</string>
+    <string name="last_kmsg">Last Kernel Message</string>
+    <string name="last_kmsg_summary">Copy /proc/last_kmsg to:\n/sdcard/KA_Logs/last_kmsg.txt</string>
+    <string name="get_prop">Get Prop</string>
+    <string name="get_prop_summary">Copy device properties (getprop) to:\n/sdcard/KA_Logs/getprop%s.txt</string>
+    <string name="driver_message">Driver Message</string>
+    <string name="driver_message_summary">Copy driver message (dmesg) to:\n/sdcard/KA_Logs/dmesg%s.txt</string>
+    <string name="last_driver_message">Last Driver Message</string>
+    <string name="last_driver_message_summary">Copy last driver message (this log contains info from yours previously reboot or random reboot) to:\n/sdcard/KA_Logs/lastdmesg%s.txt</string>
+    <string name="result">Result:</string>
+    <string name="result_empty">The search result return empty!</string>
+    <string name="result_tip">*Only display log result that did not output empty\nThe below text is scrollable and selectable you can copy and share.Tip: Copy a word and then re-run the search using that word or a characters combination\n\nSearch text:\n</string>
+    <string name="search_text">Search text:\n</string>
+    <string name="no_log_selected">Choose at least one type of log!</string>
+    <string name="copy_clipboard">Copy to clipboard</string>
+    <string name="copy_clipboard_ok">Result copied OK.</string>
+    <string name="save_to_file">Save To a File</string>
+    <string name="close">close</string>
+    <string name="forbidden_special">Forbidden Special Character in the text!</string>
+    <string name="saved_to">Result saved to:</string>
+    <string name="saved_to_summary">\n/sdcard/KA_Logs/grep_a_log%s.txt</string>
+    <string name="logcat_disable_zip">Zip generated but only with Driver message and Get prop!</string>
+    <string name="logcat_disable">Android logging is disable!</string>
+    <string name="logcat_disable_summary">Android logging is disable, Logcat, Radio Log and Events Logs is empty!\n\nTurn Android logging on under Misc and try again</string>
+    <string name="log_folder_error">Error!\n\nCan\'t create a Log folder in /sdcard/KA_Logs/ Check permission if the problem persist contact the developer</string>
+    <string name="kernel_changes">Kernel Changes</string>
+    <string name="kernel_changes_summary">Copy current kernel saved changes (section with changes and apply on boot enable) to:\n/sdcard/KA_Logs/kernel_changes%s.txt</string>
+
+    <!-- Settings -->
+    <string name="dark_theme">Dark theme</string>
+    <string name="force_english_language">Force English Language</string>
+    <string name="notification">Notification</string>
+    <string name="notification_summary">Show a notification when apply on boot service starts. Please disable this if you get any problems.</string>
+    <string name="show_toast">Show toast</string>
+    <string name="test">Test</string>
+    <string name="test_summary">Test apply on boot (with delay). If nothing happens then there are no saved settings.</string>
+    <string name="hide_apply_on_boot">Hide Apply On Boot</string>
+    <string name="hide_apply_on_boot_summary">Hide its view when scrolling down.</string>
+    <string name="enable_apply_on_boot_first">You have to enable apply on boot at least for one section first.</string>
+    <string name="security">Security</string>
+    <string name="set_password">Set Password</string>
+    <string name="set_password_summary">You can protect Kernel Adiutor by setting up a password. Every time you open this application, you have to enter it. If you forget it, simply wipe the data of this application in settings of your device. Don\'t worry I won\'t share your password.</string>
+    <string name="delete_password">Delete Password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="old_password">Old password</string>
+    <string name="old_password_wrong">Old password is wrong</string>
+    <string name="password_empty">Password is empty</string>
+    <string name="password_not_match">Password doesn\'t match confirmation</string>
+    <string name="password_too_long">Password is too long</string>
+    <string name="set_password_first">Set a password first</string>
+    <string name="show_sections">Show sections</string>
+    <string name="per_app">Per App Profiles</string>
+    <string name="per_app_toast">Per App Toast</string>
+    <string name="per_app_toast_summary">Show a toast when applying a profile for Per App detection</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_drawer_summary">Enable to relocate Navigation Drawer to opposite side of the screen.</string>
+    <string name="show_cpu_info">CPU info</string>
+    <string name="not_available">Not Available</string>
+
+    <!-- FAQ -->
+
+    <!-- About us -->
+    <string name="license">License</string>
+    <string name="app_license">Kernel Adiutor is licensed under the Apache License, Version 2.0, and uses following libraries</string>
+    <string name="appcompat_v7" translatable="false">v7 Appcompat Library</string>
+    <string name="cardview_v7" translatable="false">v7 Cardview Library</string>
+    <string name="recyclerview_v7" translatable="false">v7 Recyclerview Library</string>
+    <string name="google" translatable="false">Google</string>
+    <string name="fab" translatable="false">FloatingActionButton</string>
+    <string name="jerzy" translatable="false">Jerzy Chałupski</string>
+    <string name="dashclock" translatable="false">Dashclock</string>
+    <string name="nurik" translatable="false">Roman Nurik</string>
+    <string name="picasso" translatable="false">Picasso</string>
+    <string name="square" translatable="false">Square Inc.</string>
+    <string name="materialtabs" translatable="false">MaterialTabs</string>
+    <string name="frenn" translatable="false">Karim Frenn</string>
+    <string name="ztzip" translatable="false">Zt-Zip</string>
+    <string name="zero" translatable="false">ZeroTurnaround</string>
+    <string name="material_dialogs" translatable="false">Material-Dialogs</string>
+    <string name="afollestad" translatable="false">Afollestad</string>
+    <string name="open_source">Open source</string>
+    <string name="open_source_summary">This application is open source. Check it out on my GitHub!</string>
+    <string name="feature_request">Feature request or Bugs</string>
+    <string name="feature_requestb_summary">Do you want more features? or found a bug?\nClick here and mention @baybutcher27 with the request or bug on the XDA thread.</string>
+    <string name="xda_summary">This app is supported via XDA thread check it here</string>
+
+    <string name="modification">Modified for BHB27-Kernel</string>
+    <string name="modification_summary">This application is being heavily modified for the kernel BHB27-Kernel for Quark Motorola (Moto Maxx, Turbo or Droid Turbo). Check it out in the downloads section!</string>
+
+    <string name="modification_version">BHB27 Mod Version</string>
+
+    <string name="accessibility_service_label">BHB27-Kernel-Adiutor Per App Monitor</string>
+    <string name="accessibility_service_desc">Service to monitor when foreground app changes for per-app profile loading</string>
+
+</resources>
+>>>>>>> 94ad5ab... Battery add BCL Hotplugging controls

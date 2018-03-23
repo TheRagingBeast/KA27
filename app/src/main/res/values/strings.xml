@@ -414,11 +414,9 @@ Click here and mention @baybutcher27 with the request or bug on the XDA thread."
     <string name="gpu_governor_summary">Set the governor of the GPU.</string>
     <string name="gpu_governor_tunables">GPU Governor Tunables</string>
     <string name="gpu_governor_tunables_note">"Not all but some GPU_GOV have tunables, if the below is empty this GOV doesn't have it.
-
 Governos that have Tunable:
 msm-adreno-tz
 simple_ondemand
-
 In some featuring is need to enable the first switch under tunables to see others controllers for that."</string>
     <string name="gpu_max_freq">GPU Maximum Frequency</string>
     <string name="gpu_max_freq_summary">Set the maximum frequency the GPU scales up to.</string>
@@ -549,7 +547,6 @@ Enable to see the tunables"</string>
     <string name="lmk_profiles">LMK Profiles</string>
     <string name="lmk_profiles_original">Profiles (General use)</string>
     <string name="lmk_profiles_summary">"Click on one of the Profile below to set its values to LMK Min Free parameters.
-
 Values will be set according this order:
 A,B,C,D,E,F,G
 Were:
@@ -564,6 +561,11 @@ G = VM Pressure Min
 *G VM Pressure Min, only available in TheRagingBeast Kernel"</string>
     <string name="load_balancer">Load Balancer</string>
     <string name="load_threshold">Load Threshold</string>
+	    <!-- FileBrowser -->
+    <string name="no_permission">No storage permission</string>
+    <string name="select_file">Select %s ?</string>
+    <string name="no_files">No files in this path.</string>
+    <string name="copy">Copy</string>
     <string name="load_threshold_summary">The threshold to online all CPUs.</string>
     <string name="loading">Loading</string>
     <string name="log_events">Events Log</string>
@@ -1417,7 +1419,6 @@ Original | Compressed | Compress Ratio %"</string>
     <string name="flash_img">Flash IMG</string>
     <string name="flashing">Flashing</string>
     <string name="boot" translatable="false">Boot</string>
-    <string name="fota" translatable="false">Fota</string>
     <string name="backing_up">Backing up</string>
     <string name="empty_name">Name is empty!</string>
     <string name="backup_already_exists">A backup with the same name already exists. Delete it first!</string>
@@ -1514,7 +1515,7 @@ Original | Compressed | Compress Ratio %"</string>
     <string name="saved_to_summary">\n/sdcard/KA_Logs/grep_a_log%s.txt</string>
     <string name="logcat_disable_zip">Zip generated but only with Driver message and Get prop!</string>
     <string name="logcat_disable">Android logging is disable!</string>
-    <string name="logcat_disable_summary">Android logging is disable, Logcat, Radio Log and Events Logs is empty!\n\nTurn Android logging on under Misc and try again</string>
+    <string name="logcat_disable_summary">Android logging is disable, Logcat, Radio Logs and Events Logs is empty!\n\nEnable Android logging in Misc and try again</string>
     <string name="log_folder_error">Error!\n\nCan\'t create a Log folder in /sdcard/KA_Logs/ Check permission if the problem persist contact the developer</string>
     <string name="kernel_changes">Kernel Changes</string>
     <string name="kernel_changes_summary">Copy current kernel saved changes (section with changes and apply on boot enable) to:\n/sdcard/KA_Logs/kernel_changes%s.txt</string>

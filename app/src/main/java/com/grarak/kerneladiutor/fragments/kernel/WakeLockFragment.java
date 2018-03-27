@@ -152,6 +152,8 @@ public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCar
             temp_bool = WakeLock.isIPSWakeLockActive();
             mIPSWakeLockCard = new SwitchCardView.DSwitchCard();
             mIPSWakeLockCard.setTitle(getString(R.string.ips_wakelock));
+			mIPSWakeLockCard.setDescription(String.format(getString(R.string.ips_wakelock_summary), temp_bool ?
+                getString(R.string.enabled) : getString(R.string.disabled)));
             mIPSWakeLockCard.setChecked(temp_bool);
             mIPSWakeLockCard.setOnDSwitchCardListener(this);
 
@@ -162,6 +164,8 @@ public class WakeLockFragment extends RecyclerViewFragment implements SeekBarCar
             temp_bool = WakeLock.isSanityWakeLockActive();
             mSanityWakeLockCard = new SwitchCardView.DSwitchCard();
             mSanityWakeLockCard.setTitle(getString(R.string.sanity_wakelock));
+			mSanityWakeLockCard.setDescription(String.format(getString(R.string.sanity_wakelock_summary), temp_bool ?
+                getString(R.string.enabled) : getString(R.string.disabled)));
             mSanityWakeLockCard.setChecked(temp_bool);
             mSanityWakeLockCard.setOnDSwitchCardListener(this);
 

@@ -49,6 +49,10 @@
     <string name="alarm_wakelock">AlarmTimer Wakelock</string>
     <string name="alarm_wakelock_summary">"Allow AlarmTimer Wakelock.
  Currently: %s"</string>
+    <string name="ips_wakelock_summary">"Allow IPA_WS Wakelock.
+ Currently: %s"</string>
+    <string name="sanity_wakelock_summary">"Allow QPNP_FG_SANITY_CHECK Wakelock.
+ Currently: %s"</string>
     <string name="all_startup_commands">Tap this card to copy or delete all saved startup settings</string>
     <string name="allowed_low_freq">Phase 1: Allowed Low Frequency</string>
     <string name="allowed_low_high">Phase 1: Allowed Low High</string>

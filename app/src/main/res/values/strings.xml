@@ -568,7 +568,6 @@ G = VM Pressure Min
 	    <!-- FileBrowser -->
     <string name="no_permission">No storage permission</string>
     <string name="select_file">Select %s ?</string>
-    <string name="no_files">No files in this path.</string>
     <string name="load_threshold_summary">The threshold to online all CPUs.</string>
     <string name="loading">Loading</string>
     <string name="log_events">Events Log</string>
@@ -673,7 +672,6 @@ Turn Android logging on under Misc and try again"</string>
     <string name="no_files">No files in this path.</string>
     <string name="no_internet">No internet connection</string>
     <string name="no_log_selected">Choose at least one type of log!</string>
-    <string name="no_permission">No permission</string>
     <string name="no_picture">No Picture</string>
     <string name="no_profiles">No profiles</string>
     <string name="no_root">No root available</string>
@@ -864,7 +862,6 @@ Recommendation Use only one space between characters"</string>
     <string name="secondary_server">Secondary Server</string>
     <string name="security">Security</string>
     <string name="select_all">Select all</string>
-    <string name="select_file">Select %s ?</string>
     <string name="select_picture">Select Picture</string>
     <string name="sensor_ind_wakelock">sensor_ind Wakelock</string>
     <string name="sensor_ind_wakelock_summary">"Allow wakelock when Ambient Display disabled.
@@ -1444,7 +1441,6 @@ Original | Compressed | Compress Ratio %"</string>
     <string name="profile_description">Adding a new profile:\nSet a name, and select sections to be saved to this profile.\n*Don\'t select CPU Voltage if you plane to share this.</string>
     <string name="profile_information">Profiles:\n Adding a profile will save your current settings to Internal Storage/KA_profiles/profiles.json. You can apply them later, and share with others.\n\nPer App Settings:\n Enable a pre saved profile to automatic load the Kernel Adiutor settings based on the start of foreground app, it is saved on Internal Storage/KA_profiles/per_app.json.\n\nTip:\n 1. If you plan to share a profile do not Select CPU Voltage when making a profile, as it device runs on a different voltage table.\n 2. Do Not share Per app Profiles as it person have a different set of apps</string>
     <string name="name">Name</string>
-    <string name="select_all">Select all</string>
     <string name="apply">Apply</string>
     <string name="removed_all_sections">You removed all sections! No profiles for you.</string>
     <string name="no_settings">No settings found!</string>

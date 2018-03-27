@@ -1096,7 +1096,6 @@ Is opposite, this is the number of bits of entropy required to be Available befo
 Original | Compressed | Compress Ratio %"</string>
     <string name="zram_ro">Z-RAM Read Only</string>
     <string name="ztzip">Zt-Zip</string>
-</resources>
     <!-- Wake Controls -->
     <string name="vib_strength">Wake Gestures Vibration Strength</string>
     <string name="vib_strength_summary">This value is specific to wake gestures and independent of the normal vibration strength. It is purely for the kernel driver. Gestures controlled by third party apps will not use this value.</string>
@@ -1592,4 +1591,3 @@ Original | Compressed | Compress Ratio %"</string>
     <string name="accessibility_service_desc">Service to monitor when foreground app changes for per-app profile loading</string>
 
 </resources>
->>>>>>> 94ad5ab... Battery add BCL Hotplugging controls

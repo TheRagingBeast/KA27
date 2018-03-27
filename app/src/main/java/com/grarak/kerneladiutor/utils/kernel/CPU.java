@@ -503,11 +503,11 @@ public class CPU implements Constants {
             List < Integer > cpu4Freqs = getFreqs(4);
             if (cpu0Freqs != null && cpu4Freqs != null) {
                 if (cpu0Freqs.size() > cpu4Freqs.size()) {
-                    bigCore = 0;
-                    LITTLEcore = 4;
+                    bigCore = 2;
+                    LITTLEcore = 2;
                 } else {
-                    bigCore = 4;
-                    LITTLEcore = 0;
+                    bigCore = 2;
+                    LITTLEcore = 2;
                 }
             }
         }

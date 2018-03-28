@@ -133,6 +133,13 @@ Probably defective charger and/or cable."</string>
     <string name="bcl_voltage_high">BCL high voltage threshold</string>
     <string name="bcl_voltage_high_summary">The battery voltage threshold above which the BCL driver clears the previously applied mitigation, disables the battery current monitoring, and starts monitoring for low battery voltage.</string>
     <string name="bcl_voltage_low">BCL low voltage threshold</string>
+    <string name="bcl_cores_none">None</string>
+    <string name="bcl_cores">BCL Hotplugging</string>
+    <string name="bcl_cores_summary">Choose how many cores will be unplugged when the BCL driver starts to mitigate the CPU</string>
+    <string name="bcl_cores_1">1 (Core 3)</string>
+    <string name="bcl_cores_2">2 (Core 1 and 3)</string>
+    <string name="bcl_cores_3">2 (Core 2 and 3)</string>
+    <string name="bcl_cores_4">3 (Core 1 to 3)</string>
     <string name="bcl_voltage_low_summary">The battery voltage threshold below which the BCL driver starts monitoring the battery current thresholds and mitigates the CPU on the event of high load.</string>
     <string name="bcmdhd_wakelock_divider">BCMDHD Wakelock Divider</string>
     <string name="bhb27_recommended">TheRagingBeast Recommended</string>

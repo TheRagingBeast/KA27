@@ -25,7 +25,7 @@ script:
   - echo y | android update sdk -u -a -t extra-android-m2repository 
   - ./gradlew build
   - ls
-  - ls /home/travis/build/varunhardgamer/KA27/app/build/outputs/
-  - ls /home/travis/build/varunhardgamer/KA27/app/build/outputs/apk
+  - ls /home/travis/build/theragingbeast/KA27/app/build/outputs/
+  - ls /home/travis/build/theragingbeast/KA27/app/build/outputs/apk
   - ls app/build/outputs/apk/debug
-  - cd /home/travis/build/varunhardgamer/KA27/app/build/outputs/apk/debug &&  curl --upload-file ./app-debug.apk https://transfer.sh/app-debug.apk && sleep 5
+  - cd /home/travis/build/theragingbeast/KA27/app/build/outputs/apk/debug &&  curl --upload-file ./app-debug.apk https://transfer.sh/app-debug.apk && sleep 5
